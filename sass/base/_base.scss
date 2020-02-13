@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 10px; // 1 rem is equal to 10px. */
+  font-size: 62.5% // 10px divided by 16px root default font-size
+}
+
+body {
+  background-color: $background-color;
+  box-sizing: border-box;
+}

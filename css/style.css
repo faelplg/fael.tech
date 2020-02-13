@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /* font-size: 10px; // 1 rem is equal to 10px. */
+  font-size: 62.5%; }
+
+body {
+  background-color: #ECE0E8;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'Kelson';
+  src: url("KelsonSans-Light.woff2") format("woff2"), url("KelsonSans-Light.woff") format("woff"); }
+
+body {
+  font-family: 'Kelson', sans-serif;
+  color: #230A1B;
+  padding: 3rem; }
+
+.heading-primary {
+  color: white;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-iteration-count: 3; */
+    /* animation-delay: 1s; */ }
+  .heading-primary--sub {
+    color: #c1c1c1;
+    display: block;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    animation: moveInRight 1s ease-out; }
+
+.header {
+  height: 60vh;
+  background-image: linear-gradient(to right bottom, rgba(30, 11, 54, 0.8), rgba(202, 55, 130, 0.8));
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%); }
