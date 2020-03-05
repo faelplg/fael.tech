@@ -1,14 +1,15 @@
 /// The layour header
 /// @todo Apply responsive images using media queries.
 .header {
-  height: 80vh;
-  min-height: 420px;
+  height: 70vh;
+  min-height: 500px;
   background-image: linear-gradient(to right bottom,
       rgba($color-primary-dark, 0.8),
       rgba($color-primary, 0.8)),
       url(../img/hero-1.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   -webkit-clip-path: polygon(0 0,
       100% 0,
       100% 70%,
@@ -28,6 +29,7 @@
   /// Remove clip-path in small devices.
   @include respond(tab-port) {
     height: 70vh;
+    min-height: 420px;
     -webkit-clip-path: unset;
     clip-path: unset;
   }
