@@ -1,11 +1,21 @@
+/// The layour header
+/// @todo Apply responsive images using media queries.
 .header {
-  height: 70vh;
+  height: 80vh;
+  min-height: 420px;
   background-image: linear-gradient(to right bottom,
       rgba($color-primary-dark, 0.8),
       rgba($color-primary, 0.8)),
-      url(../img/hero.jpg);
+      url(../img/hero-1.jpg);
   background-size: cover;
-  background-position: top;
+  background-position: center;
+  -webkit-clip-path: polygon(0 0,
+      100% 0,
+      100% 70%,
+      85% 100%,
+      15% 100%,
+      0 70%,
+      0 100%);
   clip-path: polygon(0 0,
       100% 0,
       100% 70%,
@@ -15,19 +25,34 @@
       0 100%);
   position: relative;
 
+  /// Remove clip-path in small devices.
+  @include respond(tab-port) {
+    height: 70vh;
+    -webkit-clip-path: unset;
+    clip-path: unset;
+  }
+
+  /// Logo container
   &__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
   }
 
+  /// Logo image
   &__logo {
     height: 5rem;
   }
 
+  /// Main text container
   &__text-box {
     @include absCenter;
-    top: 60%;
+    top: 50%;
     text-align: center;
+
+    /// Change top distance in small devices.
+    @include respond(tab-port) {
+      top: 60%;
+    }
   }
 }
