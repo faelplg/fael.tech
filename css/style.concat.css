@@ -153,7 +153,7 @@ p.p {
 
 .subtitle {
   font-size: 2rem;
-  margin-bottom: .8rem; }
+  line-height: 3.2rem; }
   .subtitle--light {
     color: #58304b; }
 
@@ -277,6 +277,7 @@ p.p {
   background-image: linear-gradient(to right bottom, rgba(30, 11, 54, 0.8), rgba(202, 55, 130, 0.8)), url(../img/hero-1.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 100%);
   position: relative; }
@@ -290,14 +291,20 @@ p.p {
     position: absolute;
     top: 4rem;
     left: 4rem; }
+    @media (max-width: 37.5em) {
+      .header__logo-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 8rem; } }
   .header__logo {
-    height: 5rem; }
+    height: 4rem; }
   .header__text-box {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 50%;
     text-align: center; }
     @media (max-width: 56.25em) {
       .header__text-box {

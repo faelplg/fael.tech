@@ -1,4 +1,10 @@
-/// The layour header
+////
+/// Header layout
+/// @group Layout
+/// @author Rafael Goulart (faelplg)
+////
+
+/// The layout header
 /// @todo Apply responsive images using media queries.
 .header {
   height: 70vh;
@@ -26,7 +32,7 @@
       0 100%);
   position: relative;
 
-  /// Remove clip-path in small devices.
+  // Remove clip-path in small devices.
   @include respond(tab-port) {
     height: 70vh;
     min-height: 420px;
@@ -39,17 +45,21 @@
     position: absolute;
     top: 4rem;
     left: 4rem;
+
+    @include respond(phone) {
+      @include absCenter;
+      top: 8rem;
+    }
   }
 
   /// Logo image
   &__logo {
-    height: 5rem;
+    height: 4rem;
   }
 
   /// Main text container
   &__text-box {
     @include absCenter;
-    top: 50%;
     text-align: center;
 
     /// Change top distance in small devices.
