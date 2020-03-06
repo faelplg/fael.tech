@@ -54,6 +54,10 @@
 
   &__link {
     font-family: 'Lato', sans-serif;
+
+    i {
+      margin-right: 4px;
+    }
     &:link,
     &:visited {
       color: $color-gray-light;

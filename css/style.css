@@ -265,6 +265,8 @@ p.p {
       margin-right: 1.5rem; }
   .footer__link {
     font-family: 'Lato', sans-serif; }
+    .footer__link i {
+      margin-right: 4px; }
     .footer__link:link, .footer__link:visited {
       color: #f8f8f8;
       background-color: #1E0B36;
