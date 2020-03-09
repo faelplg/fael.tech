@@ -12,29 +12,41 @@
   background-image: linear-gradient(to right bottom,
       rgba($color-primary-dark, 0.8),
       rgba($color-primary, 0.8)),
-      url(../img/hero-1.jpg);
+      url(../img/hero-small.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  -webkit-clip-path: polygon(0 0,
-      100% 0,
-      100% 70%,
-      85% 100%,
-      15% 100%,
-      0 70%,
-      0 100%);
-  clip-path: polygon(0 0,
-      100% 0,
-      100% 70%,
-      85% 100%,
-      15% 100%,
-      0 70%,
-      0 100%);
   position: relative;
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0,
+      100% 0,
+      100% 70%,
+      85% 100%,
+      15% 100%,
+      0 70%,
+      0 100%);
+    clip-path: polygon(0 0,
+      100% 0,
+      100% 70%,
+      85% 100%,
+      15% 100%,
+      0 70%,
+      0 100%);
+  }
+
+  // 192dpi is the Apple retina display.
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+                          (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+                          (min-width: 125em) {
+    background-image: linear-gradient(to right bottom,
+                                      rgba($color-primary-dark, 0.8),
+                                      rgba($color-primary, 0.8)),
+                      url(../img/hero.jpg);
+  }
 
   // Remove clip-path in small devices.
   @include respond(tab-port) {
-    height: 70vh;
     min-height: 420px;
     -webkit-clip-path: unset;
     clip-path: unset;
@@ -55,11 +67,17 @@
   /// Logo image
   &__logo {
     height: 4rem;
+
+    @include respond(phone) {
+      height: 8rem;
+    }
   }
 
   /// Main text container
+  /// @todo Remove top: 60px after insert button.
   &__text-box {
     @include absCenter;
+    top: 60%;
     text-align: center;
 
     /// Change top distance in small devices.

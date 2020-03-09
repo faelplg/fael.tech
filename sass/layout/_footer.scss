@@ -1,42 +1,78 @@
 .footer {
+  height: auto;
+  position: relative;
   color: $color-gray-light;
-  background-color: $color-primary-dark;
-  padding: 10rem 4rem;
+  background-image: linear-gradient(to right bottom,
+      rgba($color-primary-dark, 0.8),
+      rgba($color-primary-dark, 0.8)),
+      url(../img/hero-footer-small.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  padding: 6rem 4rem;
   font-size: 1.4rem;
 
-  clip-path: polygon(0 30%,
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 30%,
       15% 0,
       85% 0,
       100% 30%,
       100% 100%,
       0 100%);
-
-  @include respond(tab-port) {
-    padding: 8rem 0;
+    clip-path: polygon(0 30%,
+      15% 0,
+      85% 0,
+      100% 30%,
+      100% 100%,
+      0 100%);
+  }
+    
+  // 192dpi is the Apple retina display.
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+                         (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+                         (min-width: 125em) {
+    background-image: linear-gradient(to right bottom,
+                                      rgba($color-primary-dark, 0.8),
+                                      rgba($color-primary-dark, 0.8)),
+                      url(../img/hero-footer.jpg);
   }
 
-  &__logo-box {
-    text-align: center;
-    margin-bottom: 8rem;
+  // Remove clip-path in small devices.
+  @include respond(tab-port) {
+    padding: 4rem 0;
+    -webkit-clip-path: unset;
+    clip-path: unset;
+  }
 
-    @include respond(tab-port) {
-      margin-bottom: 6rem;
-    }
+  &__logo-container {
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   &__logo {
     width: 15rem;
     height: auto;
+
+    @include respond(phone) {
+      width: 20rem;
+    }
+  }
+
+  &__navigation-container {
+    text-align: center;
+    @include respond(tab-port) {
+      max-width: 50rem;
+    }
   }
 
   &__navigation {
+    text-align: center;
     border-top: 1px solid $color-primary;
     padding-top: 2rem;
     display: inline-block;
 
     @include respond(tab-port) {
       width: 100%;
-      text-align: center;
     }
   }
 
@@ -52,16 +88,19 @@
     }
   }
 
-  &__link {
+  &__link,
+  &-single__link {
     font-family: 'Lato', sans-serif;
-
+    backface-visibility: hidden;
     i {
       margin-right: 4px;
     }
+
     &:link,
     &:visited {
       color: $color-gray-light;
-      background-color: $color-primary-dark;
+      // background-color: $color-primary-dark;
+      background-color: transparent;
       text-decoration: none;
       //  text-transform: uppercase;
       display: inline-block;
@@ -71,15 +110,22 @@
     &:hover,
     &:active {
       color: $color-primary;
-      box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: 0.4);
+    }
+  }
+
+  &__link {
+    &:hover,
+    &:active {
       transform: rotate(5deg) scale(1.3);
     }
   }
 
-  &__copyright {
+  &__copyright,
+  &__credits {
+    color: rgba($color-gray-light-2, 0.7);
     font-size: 1.4rem;
     font-family: 'Lato', sans-serif;
-    border-top: 1px solid $color-primary;
+    // border-top: 1px solid $color-primary;
     padding-top: 2rem;
     width: 80%;
     float: right;
