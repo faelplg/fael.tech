@@ -11,8 +11,8 @@
     "concat:css": "concat -o css/style.concat.css css/fontawesome.css css/solid.css css/brands.css css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
     "windows:prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.concat.css -o css/style.prefix.css",
-    "compile:css": "node-sass css/style.prefix.css css/style.css",
-    "compile:css:compress": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "compile:css": "node-sass css/style.prefix.css style.css",
+    "compile:css:compress": "node-sass css/style.prefix.css style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass concat:css windows:prefix:css compile:css",
     "build:css:compress": "npm-run-all compile:sass concat:css windows:prefix:css compile:css:compress",
     "test": "echo \"Error: no test specified\" && exit 1"
