@@ -1,0 +1,24 @@
+.navigation {
+	padding: 0 3rem;
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	height: 64px;
+	background-image: linear-gradient(
+			115.07deg,
+			rgba($color-primary-dark, 0.8),
+			rgba($color-primary, 0.8)
+		),
+    url(../img/hero-small.jpg);
+    background-position: top;
+    background-attachment: fixed;
+  box-shadow: 0 2px 3px rgba($color: $color-black, $alpha: 0.8);
+
+  &__logo {
+    height: 3rem;
+
+    @include respond(phone) {
+      height: 4rem;
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "description": "My personal web page project.",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass": "node-sass sass/main.scss style.css -w",
     "serve": "live-server",
     "start": "npm-run-all --parallel serve watch:sass",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
@@ -34,5 +34,6 @@
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.0"
-  }
+  },
+  "dependencies": {}
 }

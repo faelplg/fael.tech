@@ -4532,7 +4532,7 @@ Order to implement:
   box-sizing: inherit; }
 
 html {
-  /* font-size: 10px; // 1 rem is equal to 10px. */
+  /* font-size: 10px; 1 rem is equal to 10px. */
   font-size: 62.5%; }
   @media (max-width: 75em) {
     html {
@@ -4546,15 +4546,10 @@ html {
 
 body {
   background-color: #ECE0E8;
-  box-sizing: border-box;
-  padding: 3rem; }
+  box-sizing: border-box; }
   @media (max-width: 37.5em) {
     body {
       padding: 0; } }
-
-@font-face {
-  font-family: 'Kelson';
-  src: url("fonts/KelsonSans-Light.woff2") format("woff2"), url("fonts/KelsonSans-Light.woff") format("woff"); }
 
 body {
   font-family: 'Libre Baskerville', serif;
@@ -4565,38 +4560,39 @@ p.p {
   font-size: 1.7rem;
   line-height: 3.2rem; }
 
-.heading-primary {
+.heading-sub {
+  backface-visibility: hidden; }
+
+.heading-main {
   color: #fff;
-  font-family: 'Kelson', sans-serif;
-  backface-visibility: hidden;
+  font-family: 'Roboto Slab', serif;
+  display: block;
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+  animation-name: moveInTop;
+  animation-duration: 1.6s;
+  animation-timing-function: ease-out; }
+  @media (max-width: 37.5em) {
+    .heading-main {
+      line-height: 5rem;
+      margin-bottom: 1.6rem; } }
+
+.heading-sub {
+  font-family: 'Open Sans', sans-serif;
+  color: #eee;
+  display: block;
+  font-size: 2.4rem;
+  font-weight: normal;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  animation: moveInTop 2.4s ease-out;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
   margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 5rem;
-    font-weight: 400;
-    letter-spacing: 1rem;
-    animation-name: moveInTop;
-    animation-duration: 1.6s;
-    animation-timing-function: ease-out; }
-    @media (max-width: 37.5em) {
-      .heading-primary--main {
-        letter-spacing: 1rem;
-        font-family: 4rem; } }
-  .heading-primary--sub {
-    color: #eee;
-    display: block;
-    font-size: 2.4rem;
-    font-weight: 300;
-    letter-spacing: 1rem;
-    line-height: 3.5rem;
-    margin-top: 3rem;
-    text-transform: uppercase;
-    animation: moveInTop 2.4s ease-out;
-    animation-delay: 0.75s;
-    animation-fill-mode: backwards; }
-    @media (max-width: 37.5em) {
-      .heading-primary--sub {
-        letter-spacing: .5rem; } }
+  @media (max-width: 37.5em) {
+    .heading-sub {
+      margin-bottom: 4rem; } }
 
 .title {
   display: inline-block;
@@ -4808,17 +4804,13 @@ p.p {
     width: calc(3 * ((100% - 3* 4rem) / 4) + 2 * 4rem); }
 
 .header {
-  height: 70vh;
+  height: 100vh;
   min-height: 500px;
-  background-image: linear-gradient(to right bottom, rgba(30, 11, 54, 0.8), rgba(202, 55, 130, 0.8)), url(../img/hero-small.jpg);
+  background-image: linear-gradient(115.07deg, rgba(30, 11, 54, 0.8), rgba(202, 55, 130, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   position: relative; }
-  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    .header {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 100%); } }
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(30, 11, 54, 0.8), rgba(202, 55, 130, 0.8)), url(../img/hero.jpg); } }
@@ -4848,11 +4840,30 @@ p.p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 60%;
-    text-align: center; }
+    text-align: center;
+    width: 80%; }
     @media (max-width: 56.25em) {
       .header__text-box {
-        top: 60%; } }
+        top: 55%; } }
+    @media (max-width: 37.5em) {
+      .header__text-box {
+        width: auto; } }
+
+.navigation {
+  padding: 0 3rem;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  height: 64px;
+  background-image: linear-gradient(115.07deg, rgba(30, 11, 54, 0.8), rgba(202, 55, 130, 0.8)), url(../img/hero-small.jpg);
+  background-position: top;
+  background-attachment: fixed;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.8); }
+  .navigation__logo {
+    height: 3rem; }
+    @media (max-width: 37.5em) {
+      .navigation__logo {
+        height: 4rem; } }
 
 .section-bio {
   padding: 6rem 8rem; }

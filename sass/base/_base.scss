@@ -1,3 +1,9 @@
+////
+/// Base styles
+/// @group Base
+/// @author Rafael Goulart (faelplg)
+////
+
 *,
 *::after,
 *::before {
@@ -8,7 +14,7 @@
 
 html {
   // This defines what 1rem is.
-  /* font-size: 10px; // 1 rem is equal to 10px. */
+  /* font-size: 10px; 1 rem is equal to 10px. */
   font-size: 62.5%; // 10px divided by 16px (root default font-size)
 
   // Not needed.
@@ -29,7 +35,6 @@ html {
 body {
   background-color: $background-color;
   box-sizing: border-box;
-  padding: 3rem;
 
   @include respond(phone) {
     padding: 0;

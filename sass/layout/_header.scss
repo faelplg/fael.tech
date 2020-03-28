@@ -7,82 +7,91 @@
 /// The layout header
 /// @todo Apply responsive images using media queries.
 .header {
-  height: 70vh;
-  min-height: 500px;
-  background-image: linear-gradient(to right bottom,
-      rgba($color-primary-dark, 0.8),
-      rgba($color-primary, 0.8)),
-      url(../img/hero-small.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+	height: 100vh;
+	min-height: 500px;
+	background-image: linear-gradient(
+      115.07deg,
+			rgba($color-primary-dark, 0.8),
+			rgba($color-primary, 0.8)
+		),
+		url(../img/hero-small.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
   position: relative;
 
-  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    -webkit-clip-path: polygon(0 0,
-      100% 0,
-      100% 70%,
-      85% 100%,
-      15% 100%,
-      0 70%,
-      0 100%);
-    clip-path: polygon(0 0,
-      100% 0,
-      100% 70%,
-      85% 100%,
-      15% 100%,
-      0 70%,
-      0 100%);
-  }
+	// @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+	//   -webkit-clip-path: polygon(0 0,
+	//     100% 0,
+	//     100% 70%,
+	//     85% 100%,
+	//     15% 100%,
+	//     0 70%,
+	//     0 100%);
+	//   clip-path: polygon(0 0,
+	//     100% 0,
+	//     100% 70%,
+	//     85% 100%,
+	//     15% 100%,
+	//     0 70%,
+	//     0 100%);
+	// }
 
-  // 192dpi is the Apple retina display.
-  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
-                          (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
-                          (min-width: 125em) {
-    background-image: linear-gradient(to right bottom,
-                                      rgba($color-primary-dark, 0.8),
-                                      rgba($color-primary, 0.8)),
-                      url(../img/hero.jpg);
-  }
+	// 192dpi is the Apple retina display.
+	@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+		(-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+		(min-width: 125em) {
+		background-image: linear-gradient(
+				to right bottom,
+				rgba($color-primary-dark, 0.8),
+				rgba($color-primary, 0.8)
+			),
+			url(../img/hero.jpg);
+	}
 
-  // Remove clip-path in small devices.
-  @include respond(tab-port) {
-    min-height: 420px;
-    -webkit-clip-path: unset;
-    clip-path: unset;
-  }
+	// Remove clip-path in small devices.
+	@include respond(tab-port) {
+		min-height: 420px;
+		-webkit-clip-path: unset;
+		clip-path: unset;
+	}
 
-  /// Logo container
-  &__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
+	/// Logo container
+	&__logo-box {
+		position: absolute;
+		top: 4rem;
+		left: 4rem;
 
-    @include respond(phone) {
-      @include absCenter;
-      top: 8rem;
-    }
-  }
+		@include respond(phone) {
+			@include absCenter;
+			top: 8rem;
+		}
+	}
 
-  /// Logo image
-  &__logo {
-    height: 4rem;
+	/// Logo image
+	&__logo {
+		height: 4rem;
 
-    @include respond(phone) {
-      height: 8rem;
-    }
-  }
+		@include respond(phone) {
+			height: 8rem;
+		}
+	}
 
-  /// Main text container
-  /// @todo Remove top: 60px after insert button.
-  &__text-box {
-    @include absCenter;
-    top: 60%;
+	/// Main text container
+	&__text-box {
+		@include absCenter;
     text-align: center;
+		width: auto;
+		
+		@include respond(tab-land) {
+			width: 60%;
+		}
 
-    /// Change top distance in small devices.
-    @include respond(tab-port) {
-      top: 60%;
-    }
+		@include respond(tab-port) {
+      top: 55%;
+		}
+		@include respond(phone) {
+      width: auto;
+		}
   }
 }
