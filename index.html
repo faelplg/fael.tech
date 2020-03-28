@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- \/ Uncomment to deploy -->
         <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160051848-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -10,6 +11,7 @@
 
             gtag('config', 'UA-160051848-1');
         </script> -->
+        <!-- /\ -->
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,9 +22,11 @@
         <link rel="canonical" href="https://fael.tech">
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/fontawesome.css">
-        <link rel="stylesheet" href="css/solid.css">
-        <link rel="stylesheet" href="css/brands.css">
+        <!-- \/ Comment before deploy -->
+        <link rel="stylesheet" href="icons/fontawesome.css">
+        <link rel="stylesheet" href="icons/solid.css">
+        <link rel="stylesheet" href="icons/brands.css">
+        <!-- /\ -->
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" type="image/png" href="favicon.png">
     </head>
@@ -34,7 +38,6 @@
                     <source srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" media="(max-width: 37.5em)">
                     <img srcset="img/logo-horizontal-1x.png 1x, img/logo-horizontal-2x.png 2x" alt="Full logo of fael.tech" class="header__logo" src="img/logo-horizontal-2x.png">
                 </picture>
-                <!-- <img src="img/logo-horizontal-white-transparent.svg" alt="Logo" class="header__logo"> -->
             </div>
             <div class="header__text-box">
                 <h1 class="heading-main" data-tilt data-tilt-reverse="true" data-tilt-full-page-listening>Technology as routine</h1>
@@ -42,8 +45,14 @@
                 <a href="/about/" class="btn btn--white btn--animated">About me</a>
             </div>
         </header>
-        <script type="text/javascript" src="./js/particles.js"></script>
-        <script type="text/javascript" src="./js/tilt.js"></script>
-        <script type="text/javascript" src="index.js"></script>
+        <!-- \/ Comment before deploy -->
+        <script type="text/javascript" src="./vendors/particles.js"></script>
+        <script type="text/javascript" src="./vendors/tilt.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <!-- /\ -->
+        <!-- \/ Uncomment to deploy -->
+        <!-- <script type="text/javascript" src="vendors.js"></script>
+        <script type="text/javascript" src="index.js"></script> -->
+        <!-- /\ -->
     </body>
 </html>
