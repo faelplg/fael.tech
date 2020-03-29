@@ -1,5 +1,5 @@
 .footer {
-  margin: 2rem;
+  margin: 3rem;
   height: auto;
   position: relative;
   color: $color-gray-light;
@@ -43,6 +43,10 @@
     padding: 4rem 0;
     -webkit-clip-path: unset;
     clip-path: unset;
+  }
+
+  @include respond(tab-port) {
+    margin: 0;
   }
 
   &__logo-container {
