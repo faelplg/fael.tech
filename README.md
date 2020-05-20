@@ -1,2 +1,3 @@
 # fael.tech
-My web portfolio.
+
+Digital portfolio and landing page for the portal about my career.
