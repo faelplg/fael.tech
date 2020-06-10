@@ -1,6 +1,6 @@
 {
   "name": "fael.tech",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "My personal web page project.",
   "main": "index.js",
   "scripts": {
